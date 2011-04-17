@@ -1,0 +1,12 @@
+#!/bin/sh
+# Recipe credits:
+# https://help.ubuntu.com/community/AMD64/FirefoxAndPlugins#32-bit
+# Flash fullscreen fix credits:
+# http://webupd8.blogspot.com/2009/07/how-to-fix-full-screen-flash-videos-in.html
+
+export GTK_PATH=/usr/lib32/gtk-2.0
+export PANGO_RC_FILE=/etc/pango32/pangorc
+export GDK_PIXBUF_MODULE_FILE=/etc/gtk-2.0/gdk-pixbuf.loaders.32
+export LD_PRELOAD=/usr/lib32/libGL.so.1  # fix for fullscreen crashes
+
+linux32 /usr/local/firefox32/firefox "$@"

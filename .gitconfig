@@ -1,0 +1,24 @@
+[user]
+	name = Max Ischenko
+	email = ischenko@gmail.com
+[alias]
+    b = branch
+    c = checkout
+    co = checkout
+    cm = checkout master
+    ci = commit -a
+    com = commit
+    cia = commit --amend
+    c-p = cherry-pick
+    di = diff --patience
+    l = log --patience
+    lo = log --patience
+    rbc = rebase --continue
+    s = show --patience
+    st = status
+    up = pull --rebase
+[color]
+	status = auto
+	branch = auto
+[core]
+	editor = vim +0 +start

@@ -1,0 +1,124 @@
+" "Main vim configuration file"
+
+" Options settings {{{1
+set nocompatible
+set ai			" always set autoindenting on
+set backupdir=~/.vim/.backupdir/
+set backup
+set bs=2		" allow backspacing over everything in insert mode
+set cmdheight=2
+set directory=~/.vim/.swapdir/
+set viewdir=~/.vim/view/
+set hidden
+set history=1000
+set incsearch
+set keymap=
+set laststatus=2
+set listchars=tab:>-,trail:-,eol:<
+set expandtab
+set nohls
+set pt=<F12>
+set ts=4
+set top
+set sw=4
+set nf=hex
+set foldmethod=marker
+set foldclose=
+set ruler
+set runtimepath-=~/vimfiles
+set runtimepath-=~/vimfiles/after
+set runtimepath+=~/.vim
+set runtimepath+=~/.vim/after
+set showcmd
+set showmatch
+set showmode
+set sessionoptions=curdir,folds,options,winsize,winpos,resize,buffers
+set statusline=%2n)\ %t%y%(\ [%M%R]%)\ %{&fenc}\ tw=%{&tw}\ %k%=\ %*\ \ %l:%c/%L(%2p%%)
+set viminfo='100,\"5,/100,n~/.vim/.viminfo
+set wildignore+=.o
+set wildmode=list:full
+set tw=75
+set wh=6
+set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
+
+function ShowFileEnc()
+  if &fenc != '' | return "[" . &fenc ."]" | else | return '' | endif
+endfunction
+
+if has(":vsplit")
+ set ea
+ set eadirection=ver
+end
+
+:language time C
+
+" Variable settings {{{1
+"let g:explVertical=1
+"let g:explSplitRight=1
+" Tweak minibufexplorer plugin
+"let g:miniBufExplVSplit = 20
+"let DidToggleCommentify = 1
+let DidEnhancedCommentify = 1
+let g:miniBufExplMaxSize = 2
+let g:miniBufExplMinSize = 2
+let g:calendar_monday = 1
+":let loaded_minibugexplorer = 1
+:let skip_syntax_sel_menu = 1
+:let maplocalleader = ","
+:let mapleader = ","
+":let loaded_netrw = 1
+:let mysyntaxfile = "~/.vim/mysyntax.vim"
+:let Tlist_Key = '<F6>'
+:let Tlist_Sync_Key = '<F7>'
+:let python_highlight_builtins = 1
+:let python_highlight_exceptions = 1
+" Autocommands {{{1
+au FileType text setlocal tw=78
+au BufLeave * if &ft == "help" | mark H | endif
+"au BufReadPost * loadview
+au BufWritePost ~/misc/Fortune !/usr/sbin/strfile %
+autocmd BufReadPost *
+			\ if line("'\"") > 0 && line("'\"") <= line("$") |
+			\   exe "normal g`\"" |
+			\ endif
+
+" augroup Keymap
+" au!
+" au BufEnter * call PrepareKeymap()
+" augroup END
+" Useful command aliases {{{1
+"command -bang Q q<bang>
+"command -bang W w<bang>
+command -bang WQ wq<bang>
+command -bang Wq wq<bang>
+
+" Some examples from Vim manual {{{1
+" Rename the current buffer
+:com -nargs=1 -bang -complete=file Rename f <args>|w<bang>
+
+" Replace a range with the contents of a file
+" (Enter this all as one line)
+:com -range -nargs=1 -complete=file Replace <line1>-pu_|<line1>,<line2>d|r <args>|<line1>d
+
+" Count the number of lines in the range
+":com! -range -nargs=0 Lines :echo <line2> - <line1> + 1 "lines"
+
+" Call a user function (example of <f-args>)
+":com -nargs=* Mycmd call Myfunc(<f-args>)
+
+" Switch syntax highlighting on, when the terminal has colors
+if &t_Co > 2 || has("gui_running")
+  syntax on
+endif
+" }}}
+
+filetype plugin indent on
+
+" Source additional configuration files
+so ~/.vim/maps.vim
+so ~/.vim/abbrevs.vim
+so ~/.vim/langmap.vim
+
+set langmap=йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,э',яz,чx,сc,мv,иb,тn,ьm,б\,,ю.,ё`
+
+" set completeopt-=menu

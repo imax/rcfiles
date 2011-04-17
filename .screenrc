@@ -1,0 +1,8 @@
+
+escape ^L^L
+vbell off
+defscrollback 8000
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+
+termcapinfo xterm|xterms|xs ti=\E7\E[?47l # enables mouse wheel
