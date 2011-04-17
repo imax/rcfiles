@@ -1,0 +1,4 @@
+common configuration files for vim, hg, git, ssh and other utils.
+
+Run ./install.sh to install on a fresh Ubuntu system. Safe to run multiple
+times -- never overrides existing files.
