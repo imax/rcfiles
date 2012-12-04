@@ -1,6 +1,10 @@
 [user]
 	name = Max Ischenko
 	email = ischenko@gmail.com
+[credential]
+	helper = osxkeychain
+[push]
+	default = matching
 [alias]
     b = branch
     c = checkout
