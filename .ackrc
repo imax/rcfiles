@@ -1,4 +1,0 @@
-#--type-add mako=.mako,.mak
---sort-files
---color
-#--pager=less -r
