@@ -69,6 +69,8 @@ imap <F6> <C-o>:b#<CR>
 
 " Normal mode mappings {{{1
 :nmap <buffer> <F4> :call SwitchKeymap()<CR>
+nmap <D-Left> :bp
+nmap <D-Right> :bn
 nmap <F6> :b#<CR>
 nmap <F3> n
 nmap <S-F3> N
