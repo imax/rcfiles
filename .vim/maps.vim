@@ -64,26 +64,18 @@ imap <C-Del> <C-O>cw
 :inoremap ^L ^X^L
 imap <S-Up> <C-o><C-E>
 imap <S-Down> <C-o><C-Y>
-:imap <buffer> <F4> <c-o>:call SwitchKeymap()<CR>
 imap <F6> <C-o>:b#<CR>
 
 " Normal mode mappings {{{1
-:nmap <buffer> <F4> :call SwitchKeymap()<CR>
 nmap <D-Left> :bp
 nmap <D-Right> :bn
 nmap <F6> :b#<CR>
-nmap <F3> n
-nmap <S-F3> N
 nmap <silent> <M-Down> :call ScrollOtherWindow("down")<CR>
 nmap <silent> <M-Up> :call ScrollOtherWindow("up")<CR>
 nmap Y y$
 nmap <LocalLeader>p :set patchmode=.orig<CR>
 nmap <LocalLeader>v :e ~/.vim/.vimrc<CR>
 nmap <LocalLeader>m :e ~/.vim/maps.vim<CR>
-nmap <LocalLeader>E :e ~/.vim/
-nmap <LocalLeader>e :e ~/.
-nmap <LocalLeader>g :e ~/.vim/.gvimrc<CR>
-nmap <LocalLeader>l :setlocal isk+=-<CR>
 map <leader>t :FuzzyFinderTextMate<CR>
 map <leader>b :FuzzyFinderBuffer<CR>
 noremap <space> :call ToggleFold()<CR>
@@ -156,18 +148,6 @@ fun! Eatchar(pat)
      let c = nr2char(c)
    endif
    return (c =~ a:pat) ? '' : c
-endfun
-
-" Toggle keymap option between default and ukrainian. {{{2
-fun! SwitchKeymap()
-	if &l:keymap == ""
-		setlocal keymap=ukrainian
-		setlocal imi=1
-	else
-		setlocal keymap=
-		setlocal imi=0
-	endif
-	:let &ro = &ro
 endfun
 
 " Sets file's executable permission bit. {{{2
