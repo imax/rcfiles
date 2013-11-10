@@ -1,3 +1,5 @@
 
 .vim/.swapdir
 .vim/.backupdir
+.vim/.netrwhist
+.vim/.viminfo
