@@ -20,6 +20,14 @@ done
 
 [ -d ~/.ssh ] || { mkdir ~/.ssh && chmod 700 ~/.ssh; }
 link .ssh/config
+link .bashrc
+link .gitconfig
+link .gitignore
+link .screenrc
+link .ssh
+link .vim
+link .vimrc
+
 
 # OLD: plain tar/cp
 # tar cvf - . --exclude=.hg --exclude=install.sh  | (cd $destdir && tar xf -)
