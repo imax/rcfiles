@@ -24,5 +24,6 @@
 [color]
 	status = auto
 	branch = auto
+	ui = auto
 [core]
 	editor = vim +0 +start

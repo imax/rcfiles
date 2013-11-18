@@ -21,6 +21,7 @@ export MYSQL_PS1='\d> '
 export PAGER=less
 
 PATH=~/bin:"${PATH}"
+export PATH=$PATH:/usr/local/mysql/bin:/Users/max/homebrew/bin
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
