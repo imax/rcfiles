@@ -10,6 +10,7 @@ noremap <C-TAB> :bnext<CR>
 inoremap <C-TAB> <ESC>:bnext<CR>i
 noremap <C-S-TAB> :bprevious<CR>
 inoremap <C-S-TAB> <ESC>:bprevious<CR>i
+nnoremap Q <nop>
 
 " Buffer navigation {{{1
 nmap <F2> :update<CR>

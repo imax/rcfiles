@@ -42,7 +42,6 @@ set wh=6
 set fencs=utf-8,cp1251,koi8-r,ucs-2,cp866
 set ignorecase 
 set smartcase
-set grepprg=ack-grep\ --nocolor\ -m10\ $*
 
 function ShowFileEnc()
   if &fenc != '' | return "[" . &fenc ."]" | else | return '' | endif
